@@ -43,3 +43,27 @@ Both files should be placed in the same folder. Script `test_network.py` receive
 If you want to train model or make some changes to the neural network model, you should upload `network_training.ipynb` jupyter notebook and run the required cells. Сomments in the code will help you navigate
   
 ## Gender Classification task description
+
+### Data preprocessing
+
+Since initially the images in the training set had different sizes, they were resized to the same size 64x64. 
+
+After resizing all images were converted to pytorch tensors and normalized.
+
+### Neural network architecture selection
+
+The choice was made among various convolutional neural network architectures, because they are resistant to shifts and rotations and have proven themselves well in solving a big amount of problems related to image analysis, including binary classification.
+
+The architecture of my neural network is inspired by the LeNet-5 architecture. The main differences from the classical version are the use of ReLU non-linearity instead of sigmoid and tanh activation functions (as in many other similar examples, here the use of ReLU allowed to improve the quality of classification) and the use of a 5-by-5 filter in the first convolutional layer instead of a 3-by-3 filter. This also led to improved results.
+
+### Parameters learning
+
+The weights of the neural network were trained using the error back propagation method. 
+
+The Cross Entropy function was used as the loss function. Cross Entropy, which minimizes the distance between two probability distributions -- predicted and actual, it is well suited for classification tasks.
+
+Stochastic gradient descent was used as a method for optimizing (minimizing) the loss function. Advantage of using stochastic gradient descent is that on massive datasets, it can converges faster because it performs updates more frequently. In addition, it proved to be better than other optimization methods when compared in practice. Learning rate and momentum for SGD were also found empirically.
+
+### Achieved results
+
+Training set, which contains 100'009 images was splitted into training and validation sets. Training set has size of 95'008 samples and the validation set has size of 5'001 sample. The accuracy of classification of validation samples is 95%.
