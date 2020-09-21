@@ -40,7 +40,7 @@ Both files should be placed in the same folder. Script `test_network.py` receive
 
 #### Train the model
 
-If you want to train model or make some changes to the neural network model, you should upload `network_training.ipynb` jupyter notebook and run the required cells. Сomments in the code will help you navigate
+If you want to train model or make some changes to the neural network model, you should upload `network_training.ipynb` jupyter notebook and run the required cells. Сomments in the code will help you navigate. Note that the train data should be placed in the folder 'internship_data' if you don't want to change the folder path.
   
 ## Gender Classification task description
 
